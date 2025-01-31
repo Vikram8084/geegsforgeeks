@@ -37,7 +37,8 @@ struct Node {
 
 class Solution {
   public:
-  Node* middleNode(Node* head) {
+    
+    Node* middleNode(Node* head) {
         Node* slow = head;
         Node* fast = head;
 
@@ -95,10 +96,7 @@ class Solution {
         bool ans = compareList(head, head2);
         return ans;
     }
-    // Function to check whether the list is palindrome.
-    //bool isPalindrome(Node *head) {
-        // Your code here
-    //}
+    
 };
 
 
@@ -151,6 +149,7 @@ int main() {
             head = head->next;
             delete temp;
         }
+        cout << "~\n";
     }
     return 0;
 }
