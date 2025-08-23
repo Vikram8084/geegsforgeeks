@@ -7,14 +7,14 @@ class Solution {
         int ans=-1;
         while(start<=end){
             int mid=start+(end-start)/2;
-            if(arr[mid]==x){
+            if(arr[mid]<=x){
                 ans= mid;
                 start=mid+1;
             }
-            else if(arr[mid]< x){
-                ans=mid;
-                start=mid+1;
-            }
+            // else if(arr[mid]< x){
+            //     ans=mid;
+            //     start=mid+1;
+            // }
             else{
                 end=mid-1;
             }
