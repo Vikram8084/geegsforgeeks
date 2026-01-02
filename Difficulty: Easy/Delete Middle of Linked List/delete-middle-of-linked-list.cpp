@@ -18,20 +18,19 @@ class Solution {
   public:
     Node* deleteMid(Node* head) {
         // Your Code Here
-        if(head==NULL || head->next==NULL) return NULL;
-        Node*temp=head;
-        int count=0;
-        while(temp!=NULL){
-            count++;
-            temp=temp->next;
+        if(head ==NULL || head->next==NULL) return NULL;
+        Node* slow=head;
+        Node* fast=head->next->next;
+       
+        while(fast !=NULL && fast->next !=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+            
         }
-        int n=count/2;
-       // Node*prev=NULL;
-        Node*curr=head;
-        for(int i=1;i<n;i++){
-            curr=curr->next;
-        }
-        curr->next=curr->next->next;
+        Node* temp = slow->next;
+        slow->next = temp->next;
+        delete temp;
+
         return head;
     }
 };
